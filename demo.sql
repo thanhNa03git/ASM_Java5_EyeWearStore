@@ -138,8 +138,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Products](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](50) NOT NULL,
-	[Image] [nvarchar](50) NOT NULL,
+	[Name] [nvarchar](255) NOT NULL,
+	[Image] [nvarchar](255) NOT NULL,
 	[Price] [float] NOT NULL,
 	[CreateDate] [date] NOT NULL,
 	[Available] [bit] NOT NULL,
@@ -166,6 +166,18 @@ INSERT [dbo].[Products] ([Id], [Name], [Image], [Price], [CreateDate], [Availabl
 INSERT [dbo].[Products] ([Id], [Name], [Image], [Price], [CreateDate], [Available], [CategoryId]) VALUES (14, N'Doremon', N'doremon.png', 121.6, CAST(N'2012-11-29' AS Date), 1, N'1001')
 INSERT [dbo].[Products] ([Id], [Name], [Image], [Price], [CreateDate], [Available], [CategoryId]) VALUES (16, N'Doremi', N'doremi.png', 125.7, CAST(N'2014-12-29' AS Date), 1, N'1002')
 SET IDENTITY_INSERT [dbo].[Products] OFF
+
+INSERT Accounts VALUES (N'NaVTT',N'123',N'Vo Thanh Na',N'na123@gmail.com',N'anhthe05.jpg',1,1)
+SET IDENTITY_INSERT [dbo].[Accounts] ON
+INSERT [dbo].[Accounts]([Username], [Password], [Fullname], [Email], [Photo], [Activated], [Admin]) VALUES(N'NaVTT',N'123',N'Vo Thanh Na',N'na123@gmail.com',N'photo01.jpg',1,1)
+INSERT [dbo].[Accounts]([Username], [Password], [Fullname], [Email], [Photo], [Activated], [Admin]) VALUES(N'LongMP',N'123',N'Mai Phi Long',N'long1233@gmail.com',N'photo02.jpg',1,0)
+INSERT [dbo].[Accounts]([Username], [Password], [Fullname], [Email], [Photo], [Activated], [Admin]) VALUES(N'PhucLDT',N'123',N'Luu Dinh Thien Phuc',N'phuc1323@gmail.com',N'photo03.jpg',1,1)
+INSERT [dbo].[Accounts]([Username], [Password], [Fullname], [Email], [Photo], [Activated], [Admin]) VALUES(N'AnhTN',N'123',N'Tran Nhut Anh',N'anh1233@gmail.com',N'photo04.jpg',1,0)
+INSERT [dbo].[Accounts]([Username], [Password], [Fullname], [Email], [Photo], [Activated], [Admin]) VALUES(N'VoTV',N'123',N'Tran Van Vo',N'vo1232@gmail.com',N'photo05.jpg',1,0)
+
+
+
+
 /****** Object:  Index [UQ__OrderDet__08D097A2BB215830]    Script Date: 28/05/2022 9:28:51 PM ******/
 ALTER TABLE [dbo].[OrderDetails] ADD UNIQUE NONCLUSTERED 
 (
