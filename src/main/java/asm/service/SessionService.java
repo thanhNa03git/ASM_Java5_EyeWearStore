@@ -21,6 +21,8 @@ public class SessionService {
 	public <T> T get(String name) {
 		return (T) session.getAttribute(name);
 	}
+	
+	
 
 	/**
 	 * Thay đổi hoặc tạo mới attribute trong session

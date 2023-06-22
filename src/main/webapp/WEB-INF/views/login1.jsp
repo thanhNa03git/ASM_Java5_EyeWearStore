@@ -33,7 +33,7 @@ https://templatemo.com/tm-559-zay-shop
 </head>
 
 <body>
-<jsp:include page="flex/_header.jsp"/>
+	<jsp:include page="flex/_header.jsp" />
 
 	<!-- Login -->
 	<div class="form">
@@ -47,29 +47,36 @@ https://templatemo.com/tm-559-zay-shop
 			<div id="signup">
 				<h1>Sign Up for Free</h1>
 
-				<form action="/" method="post">
+				<form action="/register" method="post">
 
 					<div class="top-row">
 						<div class="field-wrap">
-							<label> First Name<span class="req">*</span>
-							</label> <input type="text" required autocomplete="off" />
+							<label for="exampleInputEmail1"> Full Name<span
+								class="req">*</span>
+							</label> <input id="exampleInputEmail1" type="text" required
+								autocomplete="off" />
 						</div>
 
 						<div class="field-wrap">
-							<label> Last Name<span class="req">*</span>
-							</label> <input type="text" required autocomplete="off" />
+							<label for="exampleInputEmail1"> User Name<span
+								class="req">*</span>
+							</label> <input id="exampleInputEmail1" type="text" required
+								autocomplete="off" />
 						</div>
 					</div>
-
 					<div class="field-wrap">
-						<label> Email Address<span class="req">*</span>
-						</label> <input type="email" required autocomplete="off" />
+						<label for="exampleInputPassword1"> Set A Password<span
+							class="req">*</span>
+						</label> <input id="exampleInputPassword1" type="password" required
+							autocomplete="off" />
+					</div>
+					<div class="field-wrap">
+						<label for="exampleInputEmail1"> Email Address<span
+							class="req">*</span>
+						</label> <input id="exampleInputEmail1" type="email" required
+							autocomplete="off" />
 					</div>
 
-					<div class="field-wrap">
-						<label> Set A Password<span class="req">*</span>
-						</label> <input type="password" required autocomplete="off" />
-					</div>
 
 					<button type="submit" class="button button-block" />
 					Get Started
@@ -82,31 +89,34 @@ https://templatemo.com/tm-559-zay-shop
 			<div id="login">
 				<h1>Welcome Back!</h1>
 
-				<form action="/" method="post">
-
+				<form action="/login" method="post">
+					<b><i class="text-danger">${message}${param.error}</i></b>
 					<div class="field-wrap">
 						<label> UserName<span class="req">*</span>
-						</label> <input type="text" required autocomplete="off" name="username"value="" required autofocus/>
+						</label> <input type="text" required autocomplete="off" name="username"
+							value="" required autofocus />
 					</div>
 
 					<div class="field-wrap">
 						<label> Password<span class="req">*</span>
-						</label> <input type="password" required autocomplete="off" name="password" required  data-eye />
+						</label> <input type="password" required autocomplete="off"
+							name="password" required data-eye />
 					</div>
 					<!-- Remember me -->
 					<div class="field-wrap form-check">
 
-						<input type="checkbox" name="remember" class="form-check-input"
-							id="exampleCheck1"> <label class="form-check-label"
-							for="exampleCheck1">Remember me?</label>
+
 
 
 						<!-- Quen mk -->
 						<p class="forgot">
-							<a href="#">Forgot Password?</a>
+							<input type="checkbox" name="remember" class="form-check-input"
+								id="exampleCheck1"> <label class="form-check-label ms-3"
+								for="exampleCheck1">Remember me?</label> <a href="#">Forgot
+								Password?</a>
 						</p>
 					</div>
-
+					<p style="color: red">${errLogin}</p>
 
 					<button class="button button-block" />
 					Log In
@@ -124,8 +134,8 @@ https://templatemo.com/tm-559-zay-shop
 	<!-- end login -->
 
 
-	<jsp:include page="flex/_footer.jsp"/>
-	<script src="assets/js/login.js"></script>
+	<jsp:include page="flex/_footer.jsp" />
+
 </body>
 
 </html>

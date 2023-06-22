@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,15 +63,17 @@
 				<div class="flex-fill">
 					<ul
 						class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-						<li class="nav-item"><a class="nav-link" href="index">Home</a>
+						<li class="nav-item"><a class="nav-link" href="index"><s:message code="lo.mn.home"/></a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="about">About</a>
+						<li class="nav-item"><a class="nav-link" href="about"><s:message code="lo.mn.about"/></a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="shop">Shop</a>
+						<li class="nav-item"><a class="nav-link" href="shop"><s:message code="lo.mn.shop"/></a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact">Contact</a>
+						<li class="nav-item"><a class="nav-link" href="contact"><s:message code="lo.mn.contact"/></a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="login">Login</a>
+						<li class="nav-item"><a class="nav-link" href="login1"><s:message code="lo.mn.login"/></a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/admin/loginIndex"><s:message code="lo.mn.manager"/></a>
 						</li>
 					</ul>
 				</div>
@@ -90,22 +93,24 @@
 					</div>
 
 					<!-- Search -->
-					<a class="nav-icon d-none d-lg-inline" href="#"
-						data-bs-toggle="modal" data-bs-target="#templatemo_search"> <i
-						class="fa fa-fw fa-search text-dark mr-2"></i>
+					
+					<a class="nav-icon position-relative text-decoration-none" href="?lang=vi">
+						<i class="bi bi-translate text-dark mr-3"></i> <span
+						class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">Vi</span>
 					</a>
-
 					<!-- Shopping Cart -->
+					
+
+					<!-- Notification -->
+					<a class="nav-icon position-relative text-decoration-none" href="?lang=en">
+						<i class="bi bi-translate text-dark mr-3"></i> <span
+						class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">En</span>
+					</a>
+					
 					<a class="nav-icon position-relative text-decoration-none"
 						href="cart"> <i
 						class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i> <span
 						class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-					</a>
-
-					<!-- Notification -->
-					<a class="nav-icon position-relative text-decoration-none" href="#">
-						<i class="fa fa-fw fa-user text-dark mr-3"></i> <span
-						class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
 					</a>
 				</div>
 			</div>
@@ -113,21 +118,29 @@
 		</div>
 	</nav>
 	<!-- Close Header -->
+
 	<!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+	<div class="modal fade bg-white" id="templatemo_search" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="w-100 pt-1 mb-5 text-right">
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<form action="" method="get"
+				class="modal-content modal-body border-0 p-0">
+				<div class="input-group mb-2">
+					<input type="text" class="form-control" id="inputModalSearch"
+						name="q" placeholder="Search ...">
+					<button type="submit"
+						class="input-group-text bg-success text-light">
+						<i class="fa fa-fw fa-search text-white"></i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
 </body>
 </html>

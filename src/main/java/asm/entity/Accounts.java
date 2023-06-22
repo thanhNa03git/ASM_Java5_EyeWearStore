@@ -2,7 +2,6 @@ package asm.entity;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -16,13 +15,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="Accounts")
+@Table(name = "accounts")
 public class Accounts {
 	@Id
-	private String username;
-	@Column(name="fullname", columnDefinition = "nvarchar(50)")
-	private String fullname;
-	private String email, password, photo;
+	String username;
+	String email, fullname, password, photo;
 	boolean activated = true, admin = false;
 	@OneToMany(mappedBy = "accounts")
 	List<Orders> orders;

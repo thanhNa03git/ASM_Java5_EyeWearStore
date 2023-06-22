@@ -23,16 +23,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Orders")
+@Table(name = "orders")
 public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-	@Column(name="Address",columnDefinition = "nvarchar(50)")
 	String address;
-//	@Temporal(TemporalType.DATE)
-//	@Column(name = "createdate")
-//	Date createDate = new Date();
+	@Temporal(TemporalType.DATE)
+	@Column(name = "createdate")
+	Date createDate = new Date();
 	@ManyToOne @JoinColumn(name = "username")
 	Accounts accounts;
 	@OneToMany(mappedBy = "orders")

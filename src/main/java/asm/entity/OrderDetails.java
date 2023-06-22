@@ -1,6 +1,5 @@
 package asm.entity;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "OrderDetails")
+@Table(name = "orderdetails")
 public class OrderDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
